@@ -2,7 +2,7 @@
 
 Name: python-routes
 Version: 1.8
-Release: 2%{?dist}
+Release: 3%{?dist}
 Summary: Rails-like routes for Python
 
 Group: Development/Languages
@@ -44,6 +44,9 @@ rm -rf $RPM_BUILD_ROOT
 
 
 %changelog
+* Sat Nov 29 2008 Ignacio Vazquez-Abrams <ivazqueznet+rpm@gmail.com> - 1.8-3
+- Rebuild for Python 2.6
+
 * Sun May 11 2008 Kyle VanderBeek <kylev@kylev.com> - 1.8-2
 - Fix rpmlint warning.
 - Add documentation files.
