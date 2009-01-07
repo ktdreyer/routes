@@ -1,8 +1,8 @@
 %{!?python_sitelib: %define python_sitelib %(%{__python} -c "from distutils.sysconfig import get_python_lib; print get_python_lib()")}
 
 Name: python-routes
-Version: 1.8
-Release: 3%{?dist}
+Version: 1.10.1
+Release: 1%{?dist}
 Summary: Rails-like routes for Python
 
 Group: Development/Languages
@@ -11,7 +11,8 @@ URL: http://routes.groovie.org/
 Source0: http://pypi.python.org/packages/source/R/Routes/Routes-%{version}.tar.gz
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 BuildArch: noarch
-BuildRequires: python-setuptools-devel
+BuildRequires: python-setuptools-devel 
+BuildRequires: python-nose python-webtest python-paste
 
 
 %description
@@ -33,6 +34,10 @@ rm -rf $RPM_BUILD_ROOT
 %{__python} setup.py install -O1 --skip-build --root $RPM_BUILD_ROOT
 
 
+%check
+PYTHONPATH=$(pwd) nosetests
+
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
@@ -44,6 +49,10 @@ rm -rf $RPM_BUILD_ROOT
 
 
 %changelog
+* Tue Jan 06 2009 Luke Macken <lmacken@redhat.com> - 1.10.1-2
+- Update to 1.10.1
+- Run the test suite
+
 * Sat Nov 29 2008 Ignacio Vazquez-Abrams <ivazqueznet+rpm@gmail.com> - 1.8-3
 - Rebuild for Python 2.6
 
