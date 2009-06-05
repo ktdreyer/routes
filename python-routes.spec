@@ -1,8 +1,8 @@
 %{!?python_sitelib: %define python_sitelib %(%{__python} -c "from distutils.sysconfig import get_python_lib; print get_python_lib()")}
 
 Name: python-routes
-Version: 1.10.1
-Release: 2%{?dist}
+Version: 1.10.3
+Release: 1%{?dist}
 Summary: Rails-like routes for Python
 
 Group: Development/Languages
@@ -44,11 +44,14 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(-,root,root,-)
-%doc INSTALL LICENSE README docs
+%doc LICENSE README docs
 %{python_sitelib}/*
 
 
 %changelog
+* Sun May 31 2009 Luke Macken <lmacken@redhat.com> - 1.10.3-1
+- Update to 1.10.3
+
 * Thu Feb 26 2009 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 1.10.1-2
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_11_Mass_Rebuild
 
