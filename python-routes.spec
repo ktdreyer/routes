@@ -1,8 +1,8 @@
 %{!?python_sitelib: %define python_sitelib %(%{__python} -c "from distutils.sysconfig import get_python_lib; print get_python_lib()")}
 
 Name: python-routes
-Version: 1.12.1
-Release: 2%{?dist}
+Version: 1.12.3
+Release: 1%{?dist}
 Summary: Rails-like routes for Python
 
 Group: Development/Languages
@@ -49,6 +49,9 @@ rm -rf $RPM_BUILD_ROOT
 
 
 %changelog
+* Tue Oct 05 2010 Luke Macken <lmacken@redhat.com> - 1.12.3-1
+- Update to 1.12.3
+
 * Thu Jul 22 2010 David Malcolm <dmalcolm@redhat.com> - 1.12.1-2
 - Rebuilt for https://fedoraproject.org/wiki/Features/Python_2.7/MassRebuild
 
