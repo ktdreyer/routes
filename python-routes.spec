@@ -1,18 +1,18 @@
-%{!?python_sitelib: %define python_sitelib %(%{__python} -c "from distutils.sysconfig import get_python_lib; print get_python_lib()")}
-
 Name: python-routes
-Version: 1.12.3
-Release: 5%{?dist}
+Version: 1.13
+Release: 1%{?dist}
 Summary: Rails-like routes for Python
 
 Group: Development/Languages
 License: BSD
 URL: http://routes.groovie.org/
 Source0: http://pypi.python.org/packages/source/R/Routes/Routes-%{version}.tar.gz
-BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 BuildArch: noarch
-BuildRequires: python-setuptools-devel 
-BuildRequires: python-nose python-webtest python-paste
+BuildRequires: python-setuptools
+BuildRequires: python-nose 
+BuildRequires: python-webtest 
+BuildRequires: python-paste
+BuildRequires: python-repoze-lru
 
 
 %description
@@ -30,16 +30,12 @@ create pretty and concise URL's that are RESTful with little effort.
 
 
 %install
-rm -rf $RPM_BUILD_ROOT
 %{__python} setup.py install -O1 --skip-build --root $RPM_BUILD_ROOT
 
 
 %check
 PYTHONPATH=$(pwd) nosetests
 
-
-%clean
-rm -rf $RPM_BUILD_ROOT
 
 
 %files
@@ -49,6 +45,9 @@ rm -rf $RPM_BUILD_ROOT
 
 
 %changelog
+* Tue Feb 26 2013 Matthias Runge <mrunge@redhat.com> - 1.13-1
+- update to 1.13 (rhbz#803019)
+
 * Thu Feb 14 2013 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 1.12.3-5
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_19_Mass_Rebuild
 
