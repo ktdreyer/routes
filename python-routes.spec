@@ -1,6 +1,6 @@
 Name: python-routes
 Version: 1.13
-Release: 1%{?dist}
+Release: 2%{?dist}
 Summary: Rails-like routes for Python
 
 Group: Development/Languages
@@ -13,6 +13,8 @@ BuildRequires: python-nose
 BuildRequires: python-webtest 
 BuildRequires: python-paste
 BuildRequires: python-repoze-lru
+
+Requires: python-repoze-lru
 
 
 %description
@@ -45,6 +47,9 @@ PYTHONPATH=$(pwd) nosetests
 
 
 %changelog
+* Tue Mar 12 2013 Matthias Runge <P@draigBrady.com> - 1.13-2
+- Add dependency on python-repoze-lru (new in 1.13)
+
 * Tue Feb 26 2013 Matthias Runge <mrunge@redhat.com> - 1.13-1
 - update to 1.13 (rhbz#803019)
 
