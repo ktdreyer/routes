@@ -1,6 +1,6 @@
 Name: python-routes
 Version: 1.13
-Release: 2%{?dist}
+Release: 3%{?dist}
 Summary: Rails-like routes for Python
 
 Group: Development/Languages
@@ -47,6 +47,9 @@ PYTHONPATH=$(pwd) nosetests
 
 
 %changelog
+* Sun Aug 04 2013 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 1.13-3
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_20_Mass_Rebuild
+
 * Tue Mar 12 2013 Matthias Runge <P@draigBrady.com> - 1.13-2
 - Add dependency on python-repoze-lru (new in 1.13)
 
