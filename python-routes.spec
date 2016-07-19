@@ -6,7 +6,7 @@
 
 Name: python-routes
 Version: 2.2
-Release: 2%{?dist}
+Release: 3%{?dist}
 Summary: Rails-like routes for Python
 
 Group: Development/Languages
@@ -115,6 +115,9 @@ popd
 
 
 %changelog
+* Tue Jul 19 2016 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 2.2-3
+- https://fedoraproject.org/wiki/Changes/Automatic_Provides_for_Python_RPM_Packages
+
 * Thu Feb 04 2016 Fedora Release Engineering <releng@fedoraproject.org> - 2.2-2
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_24_Mass_Rebuild
 
