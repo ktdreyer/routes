@@ -5,14 +5,14 @@
 %endif
 
 Name: python-routes
-Version: 2.2
-Release: 5%{?dist}
+Version: 2.4.1
+Release: 1%{?dist}
 Summary: Rails-like routes for Python
 
 Group: Development/Languages
 License: BSD
 URL: http://routes.groovie.org/
-Source0: http://pypi.python.org/packages/source/R/Routes/Routes-%{version}.tar.gz
+Source0: https://pypi.io/packages/source/R/Routes/Routes-%{version}.tar.gz
 BuildArch: noarch
 BuildRequires: python-setuptools
 BuildRequires: python-nose
@@ -115,6 +115,9 @@ popd
 
 
 %changelog
+* Thu May 18 2017 Alan Pevec <alan.pevec@redhat.com> 2.4.1-1
+- Update to 2.4.1
+
 * Sat Feb 11 2017 Fedora Release Engineering <releng@fedoraproject.org> - 2.2-5
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_26_Mass_Rebuild
 
