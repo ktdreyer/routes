@@ -6,7 +6,7 @@
 
 Name: python-routes
 Version: 2.4.1
-Release: 1%{?dist}
+Release: 2%{?dist}
 Summary: Rails-like routes for Python
 
 Group: Development/Languages
@@ -115,6 +115,9 @@ popd
 
 
 %changelog
+* Thu Jul 27 2017 Fedora Release Engineering <releng@fedoraproject.org> - 2.4.1-2
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_27_Mass_Rebuild
+
 * Thu May 18 2017 Alan Pevec <alan.pevec@redhat.com> 2.4.1-1
 - Update to 2.4.1
 
