@@ -6,7 +6,7 @@
 
 Name: python-routes
 Version: 2.4.1
-Release: 2%{?dist}
+Release: 3%{?dist}
 Summary: Rails-like routes for Python
 
 Group: Development/Languages
@@ -32,18 +32,24 @@ BuildRequires: python3-repoze-lru
 BuildRequires: python3-six
 %endif
 
+
+%global _description\
+Routes is a Python re-implementation of the Rails routes system for mapping\
+URL's to Controllers/Actions and generating URL's. Routes makes it easy to\
+create pretty and concise URL's that are RESTful with little effort.\
+\
+This package contains the module built for python2.
+
+%description %_description
+
+%package -n python2-routes
+Summary: %summary
 Requires: python-repoze-lru
 Requires: python-six
-
 Provides: python2-routes
+%{?python_provide:%python_provide python2-routes}
 
-
-%description
-Routes is a Python re-implementation of the Rails routes system for mapping
-URL's to Controllers/Actions and generating URL's. Routes makes it easy to
-create pretty and concise URL's that are RESTful with little effort.
-
-This package contains the module built for python2.
+%description -n python2-routes %_description
 
 %if 0%{?with_python3}
 %package -n python3-routes
@@ -99,7 +105,7 @@ popd
 %endif
 
 
-%files
+%files -n python2-routes
 %defattr(-,root,root,-)
 %{!?_licensedir:%global license %%doc}
 %license LICENSE.txt
@@ -115,6 +121,10 @@ popd
 
 
 %changelog
+* Sat Aug 19 2017 Zbigniew Jędrzejewski-Szmek <zbyszek@in.waw.pl> - 2.4.1-3
+- Python 2 binary package renamed to python2-routes
+  See https://fedoraproject.org/wiki/FinalizingFedoraSwitchtoPython3
+
 * Thu Jul 27 2017 Fedora Release Engineering <releng@fedoraproject.org> - 2.4.1-2
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_27_Mass_Rebuild
 
