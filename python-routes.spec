@@ -6,7 +6,7 @@
 
 Name: python-routes
 Version: 2.4.1
-Release: 4%{?dist}
+Release: 5%{?dist}
 Summary: Rails-like routes for Python
 
 Group: Development/Languages
@@ -14,13 +14,13 @@ License: BSD
 URL: http://routes.groovie.org/
 Source0: https://pypi.io/packages/source/R/Routes/Routes-%{version}.tar.gz
 BuildArch: noarch
-BuildRequires: python-setuptools
-BuildRequires: python-nose
-BuildRequires: python-webtest
-BuildRequires: python-paste
-BuildRequires: python-repoze-lru
-BuildRequires: python-six
-BuildRequires: python-devel
+BuildRequires: python2-setuptools
+BuildRequires: python2-nose
+BuildRequires: python2-webtest
+BuildRequires: python2-paste
+BuildRequires: python2-repoze-lru
+BuildRequires: python2-six
+BuildRequires: python2-devel
 
 %if 0%{?with_python3}
 BuildRequires: python3-devel
@@ -44,8 +44,8 @@ This package contains the module built for python2.
 
 %package -n python2-routes
 Summary: %summary
-Requires: python-repoze-lru
-Requires: python-six
+Requires: python2-repoze-lru
+Requires: python2-six
 Provides: python2-routes
 %{?python_provide:%python_provide python2-routes}
 
@@ -121,6 +121,10 @@ popd
 
 
 %changelog
+* Wed Feb 28 2018 Iryna Shcherbina <ishcherb@redhat.com> - 2.4.1-5
+- Update Python 2 dependency declarations to new packaging standards
+  (See https://fedoraproject.org/wiki/FinalizingFedoraSwitchtoPython3)
+
 * Fri Feb 09 2018 Fedora Release Engineering <releng@fedoraproject.org> - 2.4.1-4
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_28_Mass_Rebuild
 
