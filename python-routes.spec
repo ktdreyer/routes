@@ -106,7 +106,6 @@ popd
 
 
 %files -n python2-routes
-%defattr(-,root,root,-)
 %{!?_licensedir:%global license %%doc}
 %license LICENSE.txt
 %doc README.rst CHANGELOG.rst docs
