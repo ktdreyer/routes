@@ -9,7 +9,6 @@ Version: 2.4.1
 Release: 7%{?dist}
 Summary: Rails-like routes for Python
 
-Group: Development/Languages
 License: BSD
 URL: http://routes.groovie.org/
 Source0: https://pypi.io/packages/source/R/Routes/Routes-%{version}.tar.gz
