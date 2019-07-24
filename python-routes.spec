@@ -1,27 +1,13 @@
-%if 0%{?rhel} && 0%{?rhel} <= 7
-%global with_python3 0
-%else
-%global with_python3 1
-%endif
-
 Name: python-routes
 Version: 2.4.1
-Release: 8%{?dist}
+Release: 9%{?dist}
 Summary: Rails-like routes for Python
 
 License: BSD
 URL: http://routes.groovie.org/
 Source0: https://pypi.io/packages/source/R/Routes/Routes-%{version}.tar.gz
 BuildArch: noarch
-BuildRequires: python2-setuptools
-BuildRequires: python2-nose
-BuildRequires: python2-webtest
-BuildRequires: python2-paste
-BuildRequires: python2-repoze-lru
-BuildRequires: python2-six
-BuildRequires: python2-devel
 
-%if 0%{?with_python3}
 BuildRequires: python3-devel
 BuildRequires: python3-setuptools
 BuildRequires: python3-nose
@@ -29,7 +15,6 @@ BuildRequires: python3-webtest
 BuildRequires: python3-paste
 BuildRequires: python3-repoze-lru
 BuildRequires: python3-six
-%endif
 
 
 %global _description\
@@ -41,20 +26,11 @@ This package contains the module built for python2.
 
 %description %_description
 
-%package -n python2-routes
-Summary: %summary
-Requires: python2-repoze-lru
-Requires: python2-six
-Provides: python2-routes
-%{?python_provide:%python_provide python2-routes}
-
-%description -n python2-routes %_description
-
-%if 0%{?with_python3}
 %package -n python3-routes
 Summary: Rails-like routes for Python3
 Requires: python3-repoze-lru
 Requires: python3-six
+%{?python_provide:%python_provide python3-routes}
 
 %description -n python3-routes
 Routes is a Python re-implementation of the Rails routes system for mapping
@@ -63,62 +39,34 @@ create pretty and concise URL's that are RESTful with little effort.
 
 This package contains the module built for python3.
 
-%endif
 
 %prep
 %setup -q -n Routes-%{version}
 
-%if 0%{?with_python3}
-rm -rf %{py3dir}
-cp -a . %{py3dir}
-%endif # with_python3
-
 
 %build
-%{__python2} setup.py build
-
-%if 0%{?with_python3}
-pushd %{py3dir}
-%{__python3} setup.py build
-popd
-%endif # with_python3
+%py3_build
 
 
 %install
-%{__python2} setup.py install --skip-build --root=%{buildroot}
-
-%if 0%{?with_python3}
-pushd %{py3dir}
-%{__python3} setup.py install --skip-build --root=%{buildroot}
-popd
-%endif # with_python3
+%py3_install
 
 
 %check
-PYTHONPATH=$(pwd) nosetests
-
-%if 0%{?with_python3}
-pushd %{py3dir}
 PYTHONPATH=$(pwd) nosetests-%{python3_version}
-popd
-%endif
 
 
-%files -n python2-routes
-%{!?_licensedir:%global license %%doc}
-%license LICENSE.txt
-%doc README.rst CHANGELOG.rst docs
-%{python2_sitelib}/*
-
-%if 0%{?with_python3}
 %files -n python3-routes
 %license LICENSE.txt
 %doc README.rst CHANGELOG.rst docs
 %{python3_sitelib}/*
-%endif
 
 
 %changelog
+* Wed Jul 24 2019 Miro Hrončok <mhroncok@redhat.com> - 2.4.1-9
+- Subpackage python2-routes has been removed
+  See https://fedoraproject.org/wiki/Changes/Mass_Python_2_Package_Removal
+
 * Sat Feb 02 2019 Fedora Release Engineering <releng@fedoraproject.org> - 2.4.1-8
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_30_Mass_Rebuild
 
