@@ -1,6 +1,6 @@
 Name: python-routes
 Version: 2.4.1
-Release: 10%{?dist}
+Release: 11%{?dist}
 Summary: Rails-like routes for Python
 
 License: BSD
@@ -63,6 +63,9 @@ PYTHONPATH=$(pwd) nosetests-%{python3_version}
 
 
 %changelog
+* Mon Aug 19 2019 Miro Hrončok <mhroncok@redhat.com> - 2.4.1-11
+- Rebuilt for Python 3.8
+
 * Fri Jul 26 2019 Fedora Release Engineering <releng@fedoraproject.org> - 2.4.1-10
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_31_Mass_Rebuild
 
