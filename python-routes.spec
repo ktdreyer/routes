@@ -1,6 +1,6 @@
 Name: python-routes
 Version: 2.4.1
-Release: 11%{?dist}
+Release: 12%{?dist}
 Summary: Rails-like routes for Python
 
 License: BSD
@@ -63,6 +63,9 @@ PYTHONPATH=$(pwd) nosetests-%{python3_version}
 
 
 %changelog
+* Thu Oct 03 2019 Miro Hrončok <mhroncok@redhat.com> - 2.4.1-12
+- Rebuilt for Python 3.8.0rc1 (#1748018)
+
 * Mon Aug 19 2019 Miro Hrončok <mhroncok@redhat.com> - 2.4.1-11
 - Rebuilt for Python 3.8
 
