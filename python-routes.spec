@@ -12,7 +12,6 @@ BuildRequires: python3-devel
 BuildRequires: python3-setuptools
 BuildRequires: python3-nose
 BuildRequires: python3-webtest
-BuildRequires: python3-paste
 BuildRequires: python3-repoze-lru
 BuildRequires: python3-six
 
