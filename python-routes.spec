@@ -28,13 +28,7 @@ create pretty and concise URL's that are RESTful with little effort.
 Summary: %{summary}
 %{?python_provide:%python_provide python3-routes}
 
-%description -n python3-routes
-Routes is a Python re-implementation of the Rails routes system for mapping
-URL's to Controllers/Actions and generating URL's. Routes makes it easy to
-create pretty and concise URL's that are RESTful with little effort.
-
-This package contains the module built for python3.
-
+%description -n python3-routes %_description
 
 %prep
 %setup -q -n Routes-%{version}
