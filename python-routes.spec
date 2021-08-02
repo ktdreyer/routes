@@ -53,7 +53,7 @@ PYTHONPATH=$(pwd) nosetests-%{python3_version}
 
 
 %changelog
-* Tue Nov 24 2020 Matthias Runge <mrunge@redhat.com> - 2.5.1-1
+* Mon Aug 02 2021 Matthias Runge <mrunge@redhat.com> - 2.5.1-1
 - Update to 2.5.1 (#1888049), thanks to Joel Capitao
 - Update the URL
 
