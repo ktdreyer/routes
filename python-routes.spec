@@ -20,9 +20,7 @@ BuildRequires: python3dist(six)
 %global _description\
 Routes is a Python re-implementation of the Rails routes system for mapping\
 URL's to Controllers/Actions and generating URL's. Routes makes it easy to\
-create pretty and concise URL's that are RESTful with little effort.\
-\
-This package contains the module built for python2.
+create pretty and concise URL's that are RESTful with little effort.
 
 %description %_description
 
