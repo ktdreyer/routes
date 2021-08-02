@@ -1,7 +1,7 @@
 Name: python-routes
 Version: 2.5.1
 Release: 1%{?dist}
-Summary: Rails-like routes for Python
+Summary: Routing Recognition and Generation Tools
 
 License: BSD
 URL: https://github.com/bbangert/routes
@@ -27,7 +27,7 @@ This package contains the module built for python2.
 %description %_description
 
 %package -n python3-routes
-Summary: Rails-like routes for Python3
+Summary: %{summary}
 %{?python_provide:%python_provide python3-routes}
 
 %description -n python3-routes
