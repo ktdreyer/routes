@@ -3,7 +3,8 @@ Version: 2.5.1
 Release: 1%{?dist}
 Summary: Routing Recognition and Generation Tools
 
-License: BSD
+# tests/test_functional/test_recognition.py is BSD, not shipped in main RPM.
+License: MIT
 URL: https://github.com/bbangert/routes
 Source0: https://pypi.io/packages/source/R/Routes/Routes-%{version}.tar.gz
 BuildArch: noarch
