@@ -28,8 +28,6 @@ This package contains the module built for python2.
 
 %package -n python3-routes
 Summary: Rails-like routes for Python3
-Requires: python3dist(repoze.lru)
-Requires: python3dist(six)
 %{?python_provide:%python_provide python3-routes}
 
 %description -n python3-routes
