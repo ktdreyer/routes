@@ -9,11 +9,12 @@ Source0: https://pypi.io/packages/source/R/Routes/Routes-%{version}.tar.gz
 BuildArch: noarch
 
 BuildRequires: python3-devel
-BuildRequires: python3-setuptools
-BuildRequires: python3-nose
-BuildRequires: python3-webtest
-BuildRequires: python3-repoze-lru
-BuildRequires: python3-six
+BuildRequires: python3dist(setuptools)
+BuildRequires: python3dist(nose)
+BuildRequires: python3dist(webtest)
+BuildRequires: python3dist(webob)
+BuildRequires: python3dist(repoze-lru)
+BuildRequires: python3dist(six)
 
 
 %global _description\
@@ -27,8 +28,8 @@ This package contains the module built for python2.
 
 %package -n python3-routes
 Summary: Rails-like routes for Python3
-Requires: python3-repoze-lru
-Requires: python3-six
+Requires: python3dist(repoze.lru)
+Requires: python3dist(six)
 %{?python_provide:%python_provide python3-routes}
 
 %description -n python3-routes
