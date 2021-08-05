@@ -27,7 +27,7 @@ create pretty and concise URL's that are RESTful with little effort.
 
 %package -n python3-routes
 Summary: %{summary}
-%{?python_provide:%python_provide python3-routes}
+%py_provides python3-routes
 
 %description -n python3-routes %_description
 
