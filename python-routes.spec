@@ -11,6 +11,7 @@ BuildArch: noarch
 
 BuildRequires: python3-devel
 BuildRequires: python3dist(setuptools)
+# nose removal in https://github.com/bbangert/routes/pull/107
 BuildRequires: python3dist(nose)
 BuildRequires: python3dist(webtest)
 BuildRequires: python3dist(webob)
